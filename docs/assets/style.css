@@ -23,7 +23,7 @@ body, html, .inter-text {
 
 @font-face {
   font-family: 'Rinter';
-  src: url('/assets/Rinter/OpenType-PS/Rinter.otf') format('opentype');
+  src: url('./Rinter/OpenType-PS/Rinter.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
