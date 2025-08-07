@@ -78,7 +78,37 @@
 
 
     <main>
-    {{ content }}
+    {% block content %}
+<section class="max-w-2xl mx-auto px-4 py-8">
+  <img src="/assets/product1.jpg" alt="Product 1" class="mb-4 w-full h-64 object-cover rounded">
+  <h1 class="text-3xl font-bold mb-2">Product 1</h1>
+  <p class="mb-4">Detailed description of Product 1.</p>
+  <p class="font-bold text-xl mb-6">$19.99</p>
+  <!-- PayPal Button Container -->
+  <div id="paypal-button-container"></div>
+</section>
+<!-- PayPal JS SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
+<script>
+paypal.Buttons({
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: '19.99'
+                },
+                description: 'Product 1'
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Transaction completed by ' + details.payer.name.given_name + '!');
+        });
+    }
+}).render('#paypal-button-container');
+</script>
+{% endblock %}
     </main>
 
     <footer class="footer p-8 text-center display-heading">

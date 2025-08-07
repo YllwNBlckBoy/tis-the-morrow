@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // config
-const PAGES_DIR = "docs";
+const PAGES_DIR = "site";
 const OUTPUT_DIR = "dist";
 const LAYOUT_FILE = "layout/base.html"; 
 
