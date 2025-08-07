@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tis The Morrow | Reflective and Observant Indie Creator </title>
+    <meta name="description" content="Tis The Morrow here and swell and constantly creating...and here are all my creations and such.">
+    <meta name="keywords" content="bootstrap-entrepreneur, entrepreneur, artists, coder, webdev, gamedev, indie, indie creator, indie developer, indie artist, indie coder, indie webdev, indie gamedev, Tis The Morrow, writer, genius, mastermind, too-smart, overly-ambitious, overly-pessimistic, pessimistic, Observant, avid-learner, cool-people">
+    <meta name="author" content="Tis The Morrow (Eero)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Social -->
+    <meta property="og:title" content="Tis The Morrow | Reflective and Observant Indie Creator">
+    <meta property="og:description" content="Tis The Morrow here and swell and constantly creating...and here are all my creations and such.">
+    <meta property="og:image" content="/site/assets/profile-image.png">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="Tis The Morrow | Reflective and Observant Indie Creator">
+    <meta name="twitter:description" content="A showcase of my creations and thoughts.">
+    <meta name="twitter:image" content="/site/assets/profile-image.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="tomorrow-me">
+    <header class="header">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
+
+            <!-- Hamburger button -->
+            <button id="menu-toggle" class="md:hidden block" style="color: white;">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" style="color: white;">
+                    <path d="M4 6h16M4 12h16M4 18h16" class="stroke-current" style="stroke: white;"/>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav id="main-nav" class="hidden md:flex space-x-6 items-center display-heading">
+                <a href="#about" class="hover:underline">About</a>
+                <button id="day-switch" class="text-center hover:cursor-pointer">Dark/Light</button>
+                <div class="relative group">
+                    <button id="main-nav-creations" class="hover:underline flex items-center">Creations
+                        <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                        </svg>
+                    </button>
+                    <div id="creations-categories" class="creations-categories absolute hidden mt-2 py-2 rounded shadow-lg z-10">
+                        <a href="#creations.art" class="nav-link block px-4 py-2">Art</a>
+                        <a href="#creations.code" class=" nav-link block px-4 py-2">Coding</a>
+                        <a href="#creations.games" class=" nav-link block px-4 py-2">Games</a>
+                        <a href="#creations.miscellaneous" class="nav-link block px-4 py-2">Miscellaneous</a>
+                        <a href="#creations/all" class="nav-link block px-4 py-2">All</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 display-heading">
+            <a href="/about.html" class="mobile-menu-content block py-2 border-b">About</a>
+            <div>
+            <button id="mobile-creations-toggle" class="mobile-menu-content w-full text-left py-2 border-b flex justify-between items-center">
+                Creations
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                </svg>
+            </button>
+            <div id="mobile-creations-menu" class="mobile-creations-menu pl-4 hidden">
+                <a href="#creations.art" class="block py-1 text-sm">Art</a>
+                <a href="#creations.code" class="block py-1 text-sm">Coding</a>
+                <a href="#creations.games" class="block py-1 text-sm">Games</a>
+                <a href="#creations.miscellaneous" class="block py-1 text-sm">Miscellaneous</a>
+                <a href="#creations.all" class="block py-1 text-sm">All</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+    {{ content }}
+    </main>
+
+    <footer class="footer p-8 text-center display-heading">
+        <div class="flex justify-center items-center mb-4">
+            <ul class="list-none flex gap-2">
+                <li><a href="" class="social-link p-4">BlueSky</a></li>
+                <li><a href="" class="social-link p-4">Reddit</a></li>
+            </ul>
+        </div>
+        <p>Website Created By Me (Tis The Morrow)</p>
+        <p>&copy; 2025 Tis The Morrow</p>
+    </footer>
+    <script src="/assets/main.js"></script>
+</body>
+</html>
