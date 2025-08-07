@@ -2,7 +2,7 @@ const chokidar = require("chokidar");
 const { exec } = require("child_process");
 
 
-const watcher = chokidar.watch(['site', 'layout', 'assets'], {
+const watcher = chokidar.watch(['docs', 'layout', 'assets'], {
   persistent: true,
   ignoreInitial: true,
   usePolling: true,
