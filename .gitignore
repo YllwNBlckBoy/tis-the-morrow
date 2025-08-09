@@ -8,3 +8,5 @@ Thumbs.db
 # Build output
 *.log
 *.tmp
+#other
+wait-n-later/

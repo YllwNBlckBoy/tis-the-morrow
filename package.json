@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "dev": "concurrently \"node watch.js\" \"live-server dist\""
+    "dev": "concurrently \"node watch.js\" \"live-server dist\"",
+    "postbuild": "npx vercel blob rm products/* --yes && npx vercel blob put products/*"
   },
   "dependencies": {
+    "@vercel/blob": "^1.1.1",
     "chokidar": "^4.0.3"
   },
   "devDependencies": {

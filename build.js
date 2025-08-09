@@ -4,10 +4,12 @@ const path = require("path");
 // config
 const PAGES_DIR = "site";
 const OUTPUT_DIR = "dist";
-const LAYOUT_FILE = "layout/base.html"; 
+const BASE_LAYOUT_FILE = "layout/base.html";
+const LISTING_LAYOUT_FILE = "layout/listing.html";
+const THANKYOU_LAYOUT_FILE = "layout/thankyou.html";
 
-// Recursively get all HTML files in the pages directory
-function getAllHtmlFiles(dir, base = "") {
+// Recursively get all HTML and asset files
+function getAllFiles(dir, base = "") {
   let results = [];
   const list = fs.readdirSync(dir);
   for (let file of list) {
@@ -16,23 +18,8 @@ function getAllHtmlFiles(dir, base = "") {
     const stat = fs.statSync(fullPath);
 
     if (stat && stat.isDirectory()) {
-      results = results.concat(getAllHtmlFiles(fullPath, path.join(base, file)));
-    } else if (
-      file.endsWith(".html") ||
-      file.endsWith(".js") ||
-      file.endsWith(".css") ||
-      file.endsWith(".scss") ||
-      file.endsWith(".png") ||
-      file.endsWith(".jpg") ||
-      file.endsWith(".ico") ||
-      file.endsWith(".jpeg") ||
-      file.endsWith(".ttf") ||
-      file.endsWith(".woff") ||
-      file.endsWith(".woff2") ||
-      file.endsWith(".otf") ||
-      file.endsWith(".gif") ||
-      file.endsWith(".svg")
-    ) {
+      results = results.concat(getAllFiles(fullPath, path.join(base, file)));
+    } else {
       results.push({ fullPath, relPath });
     }
   }
@@ -41,41 +28,49 @@ function getAllHtmlFiles(dir, base = "") {
 
 // Build process
 function buildSite() {
-  const layout = fs.readFileSync(LAYOUT_FILE, "utf-8");
-  const pages = getAllHtmlFiles(PAGES_DIR);
+  const baseLayout = fs.readFileSync(BASE_LAYOUT_FILE, "utf-8");
+  const listingLayout = fs.readFileSync(LISTING_LAYOUT_FILE, "utf-8");
+  const thankyouLayout = fs.readFileSync(THANKYOU_LAYOUT_FILE, "utf-8");
+  const pages = getAllFiles(PAGES_DIR);
 
   // Clean dist folder
   fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
   for (const { fullPath, relPath } of pages) {
-    if (
-      fullPath.endsWith(".png") ||
-      fullPath.endsWith(".jpg") ||
-      fullPath.endsWith(".jpeg") ||
-      fullPath.endsWith(".ico") ||
-      fullPath.endsWith(".gif") ||
-      fullPath.endsWith(".svg") ||
-      fullPath.endsWith(".ttf") ||
-      fullPath.endsWith(".otf") ||
-      fullPath.endsWith(".woff") ||
-      fullPath.endsWith(".woff2")
-    ) {
-      // Copy image files as binary
-      const outPath = path.join(OUTPUT_DIR, relPath);
-      fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    const outPath = path.join(OUTPUT_DIR, relPath);
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+
+    // Binary/static file extensions
+    const binaryExts = [
+      ".png", ".jpg", ".jpeg", ".ico", ".gif", ".svg",
+      ".ttf", ".otf", ".woff", ".woff2"
+    ];
+
+    // If binary file...copy directly
+    if (binaryExts.some(ext => fullPath.endsWith(ext))) {
       fs.copyFileSync(fullPath, outPath);
-    } else {
+      continue;
+    }
+
+    // If HTML file...wrap in correct layout
+    if (fullPath.endsWith(".html")) {
       const content = fs.readFileSync(fullPath, "utf-8");
-      let finalHtml = null;
-      if (fullPath.endsWith(".html")) {
-        finalHtml = layout.replace("{{ content }}", content);
-      } else {
-        finalHtml = content;
+
+      let layoutToUse = baseLayout;
+      if (relPath.startsWith("creations/")) {
+        layoutToUse = listingLayout;
       }
-      const outPath = path.join(OUTPUT_DIR, relPath);
-      fs.mkdirSync(path.dirname(outPath), { recursive: true });
+
+      if (relPath.startsWith("creations/sold/")) {
+        layoutToUse = thankyouLayout;
+      }
+
+      const finalHtml = layoutToUse.replace("{{ content }}", content);
       fs.writeFileSync(outPath, finalHtml, "utf-8");
+    } else {
+      // CSS, JS, etc...copy directly
+      fs.copyFileSync(fullPath, outPath);
     }
   }
 

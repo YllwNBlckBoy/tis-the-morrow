@@ -22,15 +22,15 @@ body, html, .inter-text {
 }
 
 @font-face {
-  font-family: 'Rinter';
-  src: url('./Rinter/OpenType-PS/Rinter.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Rinter';
+    src: url('./Rinter/OpenType-PS/Rinter.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1, h2, h3, .display-heading {
-  font-family: 'Rinter', sans-serif;
-  letter-spacing: 0.10em;
+    font-family: 'Rinter', sans-serif;
+    letter-spacing: 0.10em;
 }
 
 .header {
@@ -63,4 +63,106 @@ h1, h2, h3, .display-heading {
 .creations-categories {
     background-color: hwb(50 0% 95%);
     color: white;
+}
+
+/*product section*/
+
+.tomorrow-me .section-title {
+    color: black;
+}
+
+.today-me .section-title {
+    color: white;
+}
+
+.tomorrow-me .product-card {
+    background-color: hwb(230 5% 80%);
+    border-color: hwb(230 5% 80%);
+}
+
+.today-me .product-card {
+    background-color: hwb(50 10% 0%);
+    border-color: hwb(50 10% 0%);
+}
+
+.tomorrow-me .product-title {
+    color: white;
+}
+
+.today-me .product-title {
+    color: black;
+}
+
+.tomorrow-me .product-description {
+    color: hwb(0 90% 90%)
+}
+
+.today-me .product-description {
+    color: hwb(50 0% 95%);
+}
+
+.tomorrow-me .product-btn {
+    background-color: hwb(230 5% 80%);
+    color: white;
+    text-decoration: none;
+}
+
+.today-me .product-btn {
+    background-color: hwb(50 10% 0%);
+    color: black;
+    text-decoration: none;
+}
+
+.tomorrow-me .product-btn:hover {
+    background-color: hwb(50 0% 95%);
+    cursor: pointer;
+}
+
+.today-me .product-btn:hover {
+    background-color: hwb(0 90% 90%);
+    cursor: pointer;
+}
+
+/* Product Pages */
+
+.tomorrow-me .text-heading {
+    color: black;
+}
+
+.today-me .text-heading {
+    color: white;
+}
+
+.tomorrow-me .bg-button {
+    background-color: hwb(230 5% 80%);
+    color: white;
+}
+
+.today-me .bg-button {
+    background-color: hwb(50 10% 0%);
+    color: black;
+}
+
+.tomorrow-me .bg-button-hover:hover {
+    background-color: hwb(50 0% 95%);
+    cursor: pointer;
+}
+
+.today-me .bg-button-hover:hover {
+    background-color: hwb(0 90% 90%);
+    cursor: pointer;
+}
+
+.bg-card {
+    background-color: white;
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px black/20%;
+}
+
+/* Thank You Page */
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
