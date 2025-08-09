@@ -37,49 +37,51 @@ function buildSite() {
   fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  for (const { fullPath, relPath } of pages) {
-    const outPath = path.join(OUTPUT_DIR, relPath);
-    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+for (const { fullPath, relPath } of pages) {
+  const outPath = path.join(OUTPUT_DIR, relPath);
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
 
-    // Binary/static file extensions
-    const binaryExts = [
-      ".png", ".jpg", ".jpeg", ".ico", ".gif", ".svg",
-      ".ttf", ".otf", ".woff", ".woff2"
-    ];
+  // Binary/static file extensions
+  const binaryExts = [
+    ".png", ".jpg", ".jpeg", ".ico", ".gif", ".svg",
+    ".ttf", ".otf", ".woff", ".woff2"
+  ];
 
-    // If binary file...copy directly
-    if (binaryExts.some(ext => fullPath.endsWith(ext))) {
-      fs.copyFileSync(fullPath, outPath);
-      continue;
-    }
-
-    // If HTML file...wrap in correct layout
-    if (fullPath.endsWith(".html")) {
-      const content = fs.readFileSync(fullPath, "utf-8");
-
-      const normalizedPath = relPath.replace(/\\/g, '/').replace(/^\.\//, '');
-
-      let layoutToUse = baseLayout;
-      if (normalizedPath.startsWith("creations/sold/")) {
-        layoutToUse = thankyouLayout;
-      } else if (normalizedPath.startsWith("creations/")) {
-        layoutToUse = listingLayout;
-      } else if (normalizedPath.startsWith("creations/games/")) {
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        const outputFilePath = path.join(distDir, normalizedPath);
-        fs.mkdirSync(path.dirname(outputFilePath), { recursive: true });
-        fs.writeFileSync(outputFilePath, fileContent);
-      }
-
-      const finalHtml = layoutToUse.replace("{{ content }}", content);
-      fs.writeFileSync(outPath, finalHtml, "utf-8");
-    } else {
-      // CSS, JS, etc...copy directly
-      fs.copyFileSync(fullPath, outPath);
-    }
+  // If binary file...copy directly
+  if (binaryExts.some(ext => fullPath.endsWith(ext))) {
+    fs.copyFileSync(fullPath, outPath);
+    continue;
   }
 
-  console.log("Site built!");
+  // If HTML file...wrap in correct layout
+  if (fullPath.endsWith(".html")) {
+    const content = fs.readFileSync(fullPath, "utf-8");
+    const normalizedPath = relPath.replace(/\\/g, '/').replace(/^\.\//, '');
+
+    if (normalizedPath.startsWith("creations/games/")) {
+      // Copy game HTML exactly as-is, no layout
+      fs.writeFileSync(outPath, content, "utf-8");
+      continue; // ✅ just skip this one, keep building rest
+    }
+
+    let layoutToUse = baseLayout;
+    if (normalizedPath.startsWith("creations/sold/")) {
+      layoutToUse = thankyouLayout;
+    } else if (normalizedPath.startsWith("creations/")) {
+      layoutToUse = listingLayout;
+    }
+
+    const finalHtml = layoutToUse.replace("{{ content }}", content);
+    fs.writeFileSync(outPath, finalHtml, "utf-8");
+
+  } else {
+    // CSS, JS, etc...copy directly
+    fs.copyFileSync(fullPath, outPath);
+  }
+}
+
+console.log("Site built!");
+
 }
 
 buildSite();
