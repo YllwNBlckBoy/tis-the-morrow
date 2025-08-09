@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Tis The Morrow | Reflective and Observant Indie Creator </title>
-    <meta name="description" content="Tis The Morrow here and swell and constantly creating...and here are all my creations and such.">
-    <meta name="keywords" content="bootstrap-entrepreneur, entrepreneur, artists, coder, webdev, gamedev, indie, indie creator, indie developer, indie artist, indie coder, indie webdev, indie gamedev, Tis The Morrow, writer, genius, mastermind, too-smart, overly-ambitious, overly-pessimistic, pessimistic, Observant, avid-learner, cool-people">
-    <meta name="author" content="Tis The Morrow (Eero)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Social -->
-    <meta property="og:title" content="Tis The Morrow | Reflective and Observant Indie Creator">
-    <meta property="og:description" content="Tis The Morrow here and swell and constantly creating...and here are all my creations and such.">
-    <meta property="og:image" content="./assets/profile-image.png">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:title" content="Tis The Morrow | Reflective and Observant Indie Creator">
-    <meta name="twitter:description" content="A showcase of my creations and thoughts.">
-    <meta name="twitter:image" content="./assets/profile-image.png">
-
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/style.css" />
+    <title>{{ pageTitle }}</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <meta name="description" content="{{ pageDescription }}">
+    <meta name="keywords" content="{{ pageTags }}">
+    <meta name="author" content="Tis The Morrow (Eero)">
+
+    <meta property="og:title" content="{{ pageTitle }}">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:type" content="product">
+    <meta property="og:url" content="{{ pageUrl }}">
+    <meta property="og:image" content="{{ pageImage }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:description" content="{{ pageDescription }}">
+    <meta name="twitter:image" content="{{ pageImage }}">
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAQyLRSYjvDj2anoXs0rYnYCXcVveljAz9yVxBGT62PxuAD-bcV4rmol21oQgYlzCUa2lDrOqSoFwDRuA&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
 </head>
 <body class="tomorrow-me">
     <header class="header">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="./index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
+            <a href="../index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
 
             <!-- Hamburger button -->
             <button id="menu-toggle" class="md:hidden block" style="color: white;">
@@ -36,8 +38,12 @@
 
             <!-- Navigation Links -->
             <nav id="main-nav" class="hidden md:flex space-x-6 items-center display-heading">
-                <a href="#about" class="hover:underline">About</a>
+                <a href="../index.html#about" class="hover:underline">About</a>
                 <button id="day-switch" class="text-center hover:cursor-pointer">Dark/Light</button>
+                <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+                <script>
+                    cartPaypal.Cart({ id: "pp-view-cart" })
+                </script>
                 <div class="relative group">
                     <button id="main-nav-creations" class="hover:underline flex items-center">Creations
                         <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -45,11 +51,11 @@
                         </svg>
                     </button>
                     <div id="creations-categories" class="creations-categories absolute hidden mt-2 py-2 rounded shadow-lg z-10">
-                        <a href="#creations.art" class="nav-link block px-4 py-2">Art</a>
-                        <a href="#creations.code" class=" nav-link block px-4 py-2">Coding</a>
-                        <a href="#creations.games" class=" nav-link block px-4 py-2">Games</a>
-                        <a href="#creations.miscellaneous" class="nav-link block px-4 py-2">Miscellaneous</a>
-                        <a href="#creations/all" class="nav-link block px-4 py-2">All</a>
+                        <a href="../index.html#creation" class="nav-link block px-4 py-2">Art</a>
+                        <a href="../index.html#creation" class=" nav-link block px-4 py-2">Coding</a>
+                        <a href="../index.html#creation" class=" nav-link block px-4 py-2">Games</a>
+                        <a href="../index.html#creations" class="nav-link block px-4 py-2">Miscellaneous</a>
+                        <a href="../index.html#creation" class="nav-link block px-4 py-2">All</a>
                     </div>
                 </div>
             </nav>
@@ -57,28 +63,31 @@
 
         <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 display-heading">
-            <a href="#about" class="mobile-menu-content block py-2 border-b">About</a>
+            <a href="../index.html#about" class="mobile-menu-content block py-2 border-b">About</a>
+            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+            <script>
+                cartPaypal.Cart({ id: "pp-view-cart" })
+            </script>
             <div>
-            <button id="mobile-creations-toggle" class="mobile-menu-content w-full text-left py-2 border-b flex justify-between items-center">
-                Creations
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                    <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
-                </svg>
-            </button>
-            <div id="mobile-creations-menu" class="mobile-creations-menu pl-4 hidden">
-                <a href="#creations.art" class="block py-1 text-sm">Art</a>
-                <a href="#creations.code" class="block py-1 text-sm">Coding</a>
-                <a href="#creations.games" class="block py-1 text-sm">Games</a>
-                <a href="#creations.miscellaneous" class="block py-1 text-sm">Miscellaneous</a>
-                <a href="#creations.all" class="block py-1 text-sm">All</a>
-            </div>
+                <button id="mobile-creations-toggle" class="mobile-menu-content w-full text-left py-2 border-b flex justify-between items-center">
+                    Creations
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                    </svg>
+                </button>
+                <div id="mobile-creations-menu" class="mobile-creations-menu pl-4 hidden">
+                    <a href="../index.html#creations" class="block py-1 text-sm">Art</a>
+                    <a href="../index.html#creations" class="block py-1 text-sm">Coding</a>
+                    <a href="../index.html#games" class="block py-1 text-sm">Games</a>
+                    <a href="../index.html#creations" class="block py-1 text-sm">Miscellaneous</a>
+                    <a href="../index.html#creations" class="block py-1 text-sm">All</a>
+                </div>
             </div>
         </div>
     </header>
 
-
     <main>
-    <article>
+        <article>
     <div class="max-w-4xl mx-auto p-6">
         <!-- Product Title -->
         <h1 class="text-3xl font-bold mb-4 text-heading">The Time Collapse Zine</h1>
@@ -144,6 +153,7 @@
         <p>Website Created By Me (Tis The Morrow)</p>
         <p>&copy; 2025 Tis The Morrow</p>
     </footer>
-    <script src="./assets/main.js"></script>
+
+    <script src="../assets/main.js"></script>
 </body>
 </html>

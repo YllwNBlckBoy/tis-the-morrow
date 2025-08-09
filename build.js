@@ -57,13 +57,13 @@ function buildSite() {
     if (fullPath.endsWith(".html")) {
       const content = fs.readFileSync(fullPath, "utf-8");
 
-      let layoutToUse = baseLayout;
-      if (relPath.startsWith("creations/")) {
-        layoutToUse = listingLayout;
-      }
+      const normalizedPath = relPath.replace(/\\/g, '/').replace(/^\.\//, '');
 
-      if (relPath.startsWith("creations/sold/")) {
+      let layoutToUse = baseLayout;
+      if (normalizedPath.startsWith("creations/sold/")) {
         layoutToUse = thankyouLayout;
+      } else if (normalizedPath.startsWith("creations/")) {
+        layoutToUse = listingLayout;
       }
 
       const finalHtml = layoutToUse.replace("{{ content }}", content);
