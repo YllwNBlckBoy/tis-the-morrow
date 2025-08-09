@@ -102,5 +102,5 @@ document.addEventListener("DOMContentLoaded", () => {
       gameIframe.classList.add('hidden');
     }
   });
-  
+
 });
