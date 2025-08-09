@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>{{ pageTitle }}</title>
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/style.css" />
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <meta name="description" content="{{ pageDescription }}">
@@ -27,7 +27,7 @@
 <body class="tomorrow-me">
     <header class="header">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="../index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
+            <a href="../../index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
 
             <!-- Hamburger button -->
             <button id="menu-toggle" class="md:hidden block" style="color: white;">
@@ -38,12 +38,8 @@
 
             <!-- Navigation Links -->
             <nav id="main-nav" class="hidden md:flex space-x-6 items-center display-heading">
-                <a href="../index.html#about" class="hover:underline">About</a>
+                <a href="../../index.html#about" class="hover:underline">About</a>
                 <button id="day-switch" class="text-center hover:cursor-pointer">Dark/Light</button>
-                <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
-                <script>
-                    cartPaypal.Cart({ id: "pp-view-cart" })
-                </script>
                 <div class="relative group">
                     <button id="main-nav-creations" class="hover:underline flex items-center">Creations
                         <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
@@ -51,11 +47,11 @@
                         </svg>
                     </button>
                     <div id="creations-categories" class="creations-categories absolute hidden mt-2 py-2 rounded shadow-lg z-10">
-                        <a href="../index.html#creation" class="nav-link block px-4 py-2">Art</a>
-                        <a href="../index.html#creation" class=" nav-link block px-4 py-2">Coding</a>
-                        <a href="../index.html#creation" class=" nav-link block px-4 py-2">Games</a>
-                        <a href="../index.html#creations" class="nav-link block px-4 py-2">Miscellaneous</a>
-                        <a href="../index.html#creation" class="nav-link block px-4 py-2">All</a>
+                        <a href="../../index.html#creation" class="nav-link block px-4 py-2">Art</a>
+                        <a href="../../index.html#creation" class=" nav-link block px-4 py-2">Coding</a>
+                        <a href="../../index.html#creation" class=" nav-link block px-4 py-2">Games</a>
+                        <a href="../../index.html#creations" class="nav-link block px-4 py-2">Miscellaneous</a>
+                        <a href="../../index.html#creation" class="nav-link block px-4 py-2">All</a>
                     </div>
                 </div>
             </nav>
@@ -63,11 +59,7 @@
 
         <!-- Mobile Dropdown -->
         <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 display-heading">
-            <a href="../index.html#about" class="mobile-menu-content block py-2 border-b">About</a>
-            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
-            <script>
-                cartPaypal.Cart({ id: "pp-view-cart" })
-            </script>
+            <a href="../../index.html#about" class="mobile-menu-content block py-2 border-b">About</a>
             <div>
                 <button id="mobile-creations-toggle" class="mobile-menu-content w-full text-left py-2 border-b flex justify-between items-center">
                     Creations
@@ -76,11 +68,11 @@
                     </svg>
                 </button>
                 <div id="mobile-creations-menu" class="mobile-creations-menu pl-4 hidden">
-                    <a href="../index.html#creations" class="block py-1 text-sm">Art</a>
-                    <a href="../index.html#creations" class="block py-1 text-sm">Coding</a>
-                    <a href="../index.html#games" class="block py-1 text-sm">Games</a>
-                    <a href="../index.html#creations" class="block py-1 text-sm">Miscellaneous</a>
-                    <a href="../index.html#creations" class="block py-1 text-sm">All</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">Art</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">Coding</a>
+                    <a href="../../index.html#games" class="block py-1 text-sm">Games</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">Miscellaneous</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">All</a>
                 </div>
             </div>
         </div>
@@ -147,6 +139,6 @@
         <p>&copy; 2025 Tis The Morrow</p>
     </footer>
 
-    <script src="../assets/main.js"></script>
+    <script src="../../assets/main.js"></script>
 </body>
 </html>
