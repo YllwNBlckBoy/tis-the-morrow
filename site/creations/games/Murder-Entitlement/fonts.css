@@ -1,0 +1,18 @@
+body, .inter-text {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Babarun';
+  src: url('fonts/Babarun/Babarun.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, .display-heading {
+  font-family: 'Babarun', sans-serif;
+  letter-spacing: 0.10em;
+}

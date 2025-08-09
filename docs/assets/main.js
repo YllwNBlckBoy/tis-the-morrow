@@ -74,4 +74,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Game Play
+  const gamePlayButton = document.getElementById('game-play');
+  const gameIframe = document.querySelector('iframe');
+  gamePlayButton.addEventListener('click', () => {
+    gameIframe.classList.toggle('hidden');
+
+    // Go fullscreen if possible
+    if (gameIframe.requestFullscreen) {
+      gameIframe.requestFullscreen();
+    } else if (gameIframe.webkitRequestFullscreen) {
+      gameIframe.webkitRequestFullscreen();
+    } else if (gameIframe.msRequestFullscreen) {
+      gameIframe.msRequestFullscreen();
+    }
+
+    // Focus the game inside
+    if (gameIframe.contentWindow) {
+      gameIframe.contentWindow.focus();
+    } else {
+      gameIframe.focus();
+    }
+  });
 });

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tis The Morrow - Buy Now</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <meta name="author" content="Tis The Morrow (Eero)">
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAQyLRSYjvDj2anoXs0rYnYCXcVveljAz9yVxBGT62PxuAD-bcV4rmol21oQgYlzCUa2lDrOqSoFwDRuA&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+</head>
+<body class="tomorrow-me">
+    <header class="header">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
+
+            <!-- Hamburger button -->
+            <button id="menu-toggle" class="md:hidden block" style="color: white;">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" style="color: white;">
+                    <path d="M4 6h16M4 12h16M4 18h16" class="stroke-current" style="stroke: white;"/>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav id="main-nav" class="hidden md:flex space-x-6 items-center display-heading">
+                <a href="../../index.html#about" class="hover:underline">About</a>
+                <button id="day-switch" class="text-center hover:cursor-pointer">Dark/Light</button>
+                <div class="relative group">
+                    <button id="main-nav-creations" class="hover:underline flex items-center">Creations
+                        <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                        </svg>
+                    </button>
+                    <div id="creations-categories" class="creations-categories absolute hidden mt-2 py-2 rounded shadow-lg z-10">
+                        <a href="../../index.html#creation" class="nav-link block px-4 py-2">Art</a>
+                        <a href="../../index.html#creation" class=" nav-link block px-4 py-2">Coding</a>
+                        <a href="../../index.html#creation" class=" nav-link block px-4 py-2">Games</a>
+                        <a href="../../index.html#creations" class="nav-link block px-4 py-2">Miscellaneous</a>
+                        <a href="../../index.html#creation" class="nav-link block px-4 py-2">All</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 display-heading">
+            <a href="../../index.html#about" class="mobile-menu-content block py-2 border-b">About</a>
+            <div>
+                <button id="mobile-creations-toggle" class="mobile-menu-content w-full text-left py-2 border-b flex justify-between items-center">
+                    Creations
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                        <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                    </svg>
+                </button>
+                <div id="mobile-creations-menu" class="mobile-creations-menu pl-4 hidden">
+                    <a href="../../index.html#creations" class="block py-1 text-sm">Art</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">Coding</a>
+                    <a href="../../index.html#games" class="block py-1 text-sm">Games</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">Miscellaneous</a>
+                    <a href="../../index.html#creations" class="block py-1 text-sm">All</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Murder Entitlement</title>
+    <!--Font First-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts.css">
+    <!--Then UI-->
+    <link rel="stylesheet" href="ui.css">
+</head>
+<body style="padding: 0; margin: 0;">
+    <!-- some sounds -->
+    <audio id="bg-sound" loop>
+        <source src="sound-effects/AMBUrbn_hum_alley_daytime_MarcosL_QuietUrbanAmbienceLoops.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="default-action-sound">
+        <source src="sound-effects/308_Single.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="header-sound">
+        <source src="sound-effects/header-sound.mp3" type="audio/mpeg" />
+    </audio>
+    <header style="text-align: center; position:static; top: 0; padding: 1.25%; z-index: 1000;">
+        <h1 style="color: crimson;">Murder Entitlement</h1>
+        <ul style="list-style: none; padding: 0;">
+            <button id="fullscreenBtn" class="default-btn" style="cursor: url('ui/gun-collection/Pistols-inkscape-smaller-1_2.png') 8 8, auto;">FULLSCREEN</button>
+            <button id="themeToggleBtn" class="default-btn" style="cursor: url('ui/gun-collection/Pistols-inkscape-smaller-1_2.png') 8 8, auto;">DARK MODE</button>
+        </ul>
+    </header>
+    <div class="Game" id="Game" style="margin: 2.5%; margin-bottom: 1%; display: flex; flex-direction: row;">
+        <div class="Murderers" id="Murderers" style="width: 10%; text-align: center;">
+            <p class="display-heading" style="color: crimson;">Murderers</p>
+            <div style="overflow-y: scroll; height: 50vh; text-align: left;">
+                <ul id="sessionList" style="list-style: none; padding: 0;"></ul>
+            </div>
+        </div>
+
+        <div id="view" class="view" style="border-radius: 25px; background-color: hwb(228 5% 90%); width: 80%; max-height: fit-content;">
+            <div id="workspace" class="workspace">
+                <div id="Title-Card" class="Title-Card" style="display: block; background-color: black; color: white; text-align: center; padding: 5%; margin: 5%;">
+                    <h1 style="color: crimson;">The Murder Entitlement Game</h1>
+                    <p>Create, Build, Love, Hold, Kill, and Be Killed</p>
+                    <audio id="play-sound">
+                        <source src="sound-effects/762x54r_Spray_MP3.mp3" type="audio/mpeg" />
+                    </audio>
+                    <button style="background-color: crimson; border-radius: 25px; padding: 2.5%; color: white; font-weight: bold; min-width: 20%; cursor: url('ui/gun-collection/Pistols-inkscape-smaller-1_2.png') 8 8, auto;" id="play-button">PLAY</button>
+                </div>
+                <div id="Instructions-Card" class="Instructions-Card" style="display: none; background-color: black; color: white; text-align: center; padding: 5%; margin: 5%; font-size: large;">
+                    <p>Goal: Build house(s) out of blocks. As high and as many as you want.</p>
+                    <p style="background-color: crimson; padding: 2.5%;">Threat: Anyone can come and destroy your house(s). No reason, no name, no blame. Just a trigger.</p>
+                    <h3 style="font-weight: bold; color: crimson;">You Can Destroy Too</h3>
+                    <audio id="begin-sound">
+                        <source src="sound-effects/308_Magazine_Part_1_MP3.mp3" type="audio/mpeg" />
+                    </audio>
+                    <button style="background-color: crimson; border-radius: 25px; padding: 2.5%; color: white; font-weight: bold; min-width: 20%; cursor: url('ui/gun-collection/Pistols-inkscape-smaller-1_2.png') 8 8, auto;" id="begin-button">BEGIN</button>
+                </div>
+                <div id="Building-Zone" style="display: none; gap: 0; overflow: scroll; max-height: 90vh;">
+                    <audio id="selection-sound">
+                        <source src="sound-effects/selection-noise.mp3" type="audio/mpeg" />
+                    </audio>
+                    <div class="block" id="block" style="display: none; background-color: darkgreen; border: solid; border-color: rgb(22, 22, 32); width: 80px; height: 80px; box-sizing: border-box;"></div>
+                </div>
+                <div id="game-over-card" class="game-over-card" style="display: none; background-color: black; color: white; text-align: center; padding: 5%; margin: 5%; font-size: large;">
+                    <h2 style="font-weight: bold; color: crimson;">FAILED</h2>
+                    <button style="background-color: crimson; border-radius: 25px; padding: 2.5%; color: white; font-weight: bold; min-width: 20%; cursor: url('ui/gun-collection/Pistols-inkscape-smaller-1_2.png') 8 8, auto;" id="restart-button">DO OVER</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="Block-Controls" class="Block-Controls" style="display: none; flex-direction: column; overflow-y: scroll; margin: 2.5%; gap: 5px; width: 10%; height: 50vh; text-align: center;">
+                <audio id="block-controls-sound">
+                    <source src="sound-effects/block-controls-sound.mp3" type="audio/mpeg" />
+                </audio>
+            <div id="Expand-Controls" style="display: flex; gap: 5px; flex-direction: column;">
+                <button id="expandRows" style="background-color: rgb(39, 219, 39); padding: 2%; color: white; font-weight: bold; width: auto; height: 30px; font-size: xx-small;">+ ROW</button>
+                <button id="expandCols" style="background-color: rgb(39, 219, 39); padding: 2%; color: white; font-weight: bold; width: auto; height: 30px; font-size: xx-small;">+ COLUMN</button>
+            </div>
+            <div style="display: flex; flex-direction: column; flex-wrap: wrap; width: auto; gap: 5px; margin: 2.5%; align-items: center;">
+                <button style="background-color: rgb(37, 37, 37); border-radius: 25px; padding: 2%; color: white; font-weight: bold; width: 55px; height: 55px;">UP</button>
+                <button style="background-color: rgb(37, 37, 37); border-radius: 25px; padding: 2%; color: white; font-weight: bold; width: 55px; height: 55px;">DOWN</button>
+                <button style="background-color: rgb(37, 37, 37); border-radius: 25px; padding: 2%; color: white; font-weight: bold; width: 55px; height: 55px;">LEFT</button>
+                <button style="background-color: rgb(37, 37, 37); border-radius: 25px; padding: 2%; color: white; font-weight: bold; width: 55px; height: 55px;">RIGHT</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; margin: 2.5%; align-items: center;">
+                <input type="color" id="customColor" value="#00bfff" style="background-color: black; width: 65px; height: 45px;" />
+                <div id="fixedColors" style="display: flex; flex-direction: row; gap: 5px; flex-wrap: wrap;">
+                    <button data-color="#422f0a" style="background:rgb(66, 47, 10); border-radius: 25px; width: 25px; height: 25px;"></button>
+                    <button data-color="#ccad84" style="background:rgb(204, 173, 132); border-radius: 25px; width: 25px; height: 25px;"></button>
+                    <button data-color="#000000" style="background:rgb(0, 0, 0); border-radius: 25px; width: 25px; height: 25px;"></button>
+                    <button data-color="#0000ff" style="background:rgb(0, 0, 255); border-radius: 25px; width: 25px; height: 25px;"></button>
+                    <button data-color="#ffffff" style="background:rgb(255, 255, 255); border-radius: 25px; width: 25px; height: 25px;"></button>
+                </div>
+
+                <button style="background-color: crimson; border-radius: 25px; padding: 2%; color: white; font-weight: bold; width: 55px; height: 45px;">PAINT</button>
+            </div>
+        </div>
+    </div>
+    <div id="instructions" class="instructions" style="text-align: center; padding: 2.5%;">
+        <div id="control-info">
+            <div id="moving-selection-controls">
+                <h3 style="color: crimson;">Moving/Selection Controls</h3>
+                <p>Within the Block Controls are four buttons for moving within the building zone <b>(UP, DOWN, LEFT RIGHT)</b> The keyboard inputs for moving are <b>WSAD and the arrow keys</b>.</p>
+            </div>
+            <div id="painting-controls">
+                <h3 style="color: crimson;">Painting Controls</h3>
+                <p>Choose a paint color from in the block controls <b>(custom or the ones provided)</b> and press the (PAINT) button. The keyboard input for painting blocks is <b>enter</b>.</p>
+            </div>
+            <div id="extension-controls">
+                <h3 style="color: crimson;">Land Extension Controls</h3>
+                <p>There are two buttons within the block controls: <b>(+ COLUMN, + ROW)</b> for creating more columns and rows. The keyboard inputs are <b>C</b> for columns and <b>R</b> for rows</p>
+            </div>
+        </div>
+        <div id="game-summary">
+            <div id="game-about">
+                <h3>About the Game</h3>
+                <p>A game where players randomly destroy the work of others? Sounds bitter to me...but it does happen. It happens a lot. Passive murder. The act of murdering that comes when we don't need to face each other. Where there's more distance between you and the victim than the weapon--where the weapon is always in arm's reach. I don't know, I guess accidents happen, people get lazy, a life is not worth saving if it cost too much... and sometimes it's not a choice... <i>sometimes it is.</i></p>
+            </div>
+        </div>
+    </div>
+    <footer style="text-align: center; padding: 1.25%; color: crimson; ">
+        <div id="asset-credits" style="color: white; text-align: center; margin: 2.5%; margin-bottom: 2.5%;">
+            <h2 class="inter-text">Credits + Thanks</h2>
+            <div style="margin: 1.25%;">Thank You, <a href="https://lurinzu.gumroad.com">Lorenzo Martinez</a>, for the <a href="https://lurinzu.gumroad.com/l/BABARUN" class="display-heading">FONT</a></div>
+
+            <div style="margin: 1.25%;">Thank You, <a href="https://sungraphica.itch.io">SunGraphica</a>, for the <a href="https://sungraphica.itch.io/gun-collection-game-asset" class="display-heading">Gun Icons</a></div>
+
+            <div style="margin: 1.25%;">Thank You, <a href="https://f8studios.itch.io">SnakeF8</a>, for the <a href="https://f8studios.itch.io" class="display-heading">Gun Sound Effects</a></div>
+
+            <div style="margin: 1.25%;">Thank You, <a href="https://asaksfx.itch.io">Asak SFX</a>, for the <a href="https://asaksfx.itch.io/quiet-urban-ambience-loops" class="display-heading">Background Sound</a></div>
+            
+            <div style="margin: 1.25%;">Thanks...me (Tis The Morrow), for all the other sounds and stuff.</div>
+        </div>
+        <div id="declaration-statement" style="margin-bottom: 2.5%;"><h3>Website is coming soon.</h3></div>
+        <div id="morrow-socials" class="inter-text" style="text-align: center; margin-bottom: 2.5%; color: white;">
+            <h3 class="inter-text">Active</h3>
+                <a href="https://bsky.app/profile/tisthemorrow.bsky.social">BlueSky</a>
+            <h3 class="inter-text">...Heh...</h3>
+                <a href="https://tisthemorrow.tumblr.com/">Tumblr</a>
+                <a href="https://ko-fi.com/tisthemorrow">Ko-Fi</a>
+                <a href="https://www.reddit.com/user/Jumpy_Web_3024/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button">Reddit</a>
+                <a href="https://tisthemorrow.itch.io">Itch.io</a>
+            <h3 class="inter-text">...Um... Barely Alive</h3>
+            <p>Offline</p>
+        </div>
+        <div style="color: white; margin-bottom: 2.5%;">
+            Murder Entitlement © 2025 by Tis The Morrow is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+        </div>
+    </footer>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-analytics.js";
+        import { getDatabase, ref, set, onValue, update, remove } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDp8pe85QVw7zMHidTBzNItat4Q4Gb8SP0",
+            authDomain: "murder-entitlement.firebaseapp.com",
+            projectId: "murder-entitlement",
+            databaseURL: "https://murder-entitlement-default-rtdb.firebaseio.com/",
+            storageBucket: "murder-entitlement.firebasestorage.app",
+            messagingSenderId: "193136003645",
+            appId: "1:193136003645:web:73e1e5752979c053eab854",
+            measurementId: "G-CLGCVLQNHF"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const view = document.getElementById("view");
+
+        const defaultActionSound = document.getElementById("default-action-sound");
+
+        const playButton = document.getElementById("play-button");
+        const bgSound = document.getElementById('bg-sound');
+
+        const playSound = document.getElementById('play-sound');
+        const beginSound = document.getElementById('begin-sound');
+        const headerSound = document.getElementById('header-sound');
+
+        const titleCard = document.getElementById("Title-Card");
+        const beginButton = document.getElementById("begin-button");
+
+        const instructionsCard = document.getElementById("Instructions-Card");
+        const gameOverCard = document.getElementById("game-over-card");
+
+        const restartBtn = document.getElementById("restart-button");
+
+        const buildingZone = document.getElementById("Building-Zone");
+        const selectionSound = document.getElementById('selection-sound');
+        const blockControls = document.getElementById("Block-Controls");
+        const blockControlSound = document.getElementById('block-controls-sound');
+
+        function startBackgroundSound() {
+            bgSound.volume = 0.7;
+            bgSound.play().catch(() => {
+                console.warn('Background sound autoplay blocked until user interacts.');
+            });
+        }
+
+        function playActionSound(soundName) {
+            soundName.currentTime = 0;
+            soundName.volume = 0.9;
+            soundName.play();
+        }
+
+        playButton.addEventListener("click", () => {
+            titleCard.style.display = "none";
+            instructionsCard.style.display = "block";
+            startBackgroundSound();
+            playActionSound(playSound);
+        });
+        beginButton.addEventListener("click", () => {
+            instructionsCard.style.display = "none";
+            buildingZone.style.display = "grid";
+            blockControls.style.display = "flex";
+            playActionSound(beginSound);
+        });
+
+        let extraRows = 0;
+        let extraCols = 0;
+
+        let selectedIndex = 0;
+        let blocks = [];
+
+        let blocksPerRow = 0;
+        let maxRows = 0;
+
+        let blockColors = {};
+
+        const sessionList = document.getElementById("sessionList");
+        const sessionId = `session-${Date.now()}-${Math.floor(Math.random() * 10000)}`;
+
+        function displayedBlocks() {
+            const originalBlock = document.getElementById("block");
+            const blockWidth = 80;
+            const blockHeight = 80;
+
+            const screenHeight = window.innerHeight;
+            const containerWidth = view.offsetWidth;
+
+            blocksPerRow = Math.floor(containerWidth / blockWidth) + extraCols;
+            maxRows = Math.floor(screenHeight / blockHeight) + extraRows;
+            const totalBlocks = blocksPerRow * maxRows;
+
+            const clones = buildingZone.querySelectorAll(".block-clone");
+            clones.forEach(c => c.remove());
+
+            buildingZone.style.gridTemplateColumns = `repeat(${blocksPerRow}, ${blockWidth}px)`;
+
+            for (let i = 0; i < totalBlocks; i++) {
+                const clone = originalBlock.cloneNode(true);
+                clone.id = `block-${i + 1}`;
+                clone.classList.add("block-clone");
+                clone.style.display = "flex";
+                buildingZone.appendChild(clone);
+            }
+
+            blocks = [...document.querySelectorAll(".block-clone")];
+
+            if (blockColors.length < totalBlocks) {
+                blockColors.length = totalBlocks;
+            }
+
+            blocks.forEach((block, i) => {
+                const row = Math.floor(i / blocksPerRow);
+                const col = i % blocksPerRow;
+                const savedColor = blockColors[`${row}-${col}`];
+
+                if (savedColor) {
+                    block.style.backgroundColor = savedColor;
+                }
+            });
+
+            highlightBlock();
+        }
+
+        displayedBlocks();
+
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(displayedBlocks, 100);
+        });
+
+        window.addEventListener('orientationchange', () => {
+            setTimeout(displayedBlocks, 200);
+        });
+
+        let paintColor = document.getElementById("customColor").value;
+
+        document.getElementById("customColor").addEventListener("input", (e) => {
+            paintColor = e.target.value;
+        });
+
+        let paintedBlockCount = 0;
+        const sessionRef = ref(db, "sessions/" + sessionId);
+        set(sessionRef, { id: sessionId, painted: 0 });
+
+        function highlightBlock() {
+            if (selectedIndex < 0) selectedIndex = 0;
+            if (selectedIndex >= blocks.length) selectedIndex = blocks.length - 1;
+            playActionSound(selectionSound);
+
+            blocks.forEach((block, i) => {
+                if (i === selectedIndex) {
+                    block.style.border = '3px solid blue';
+                    block.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+                } else {
+                    block.style.border = '1px solid rgb(22, 22, 32)';
+                }
+            });
+        }
+
+        function moveSelection(dir) {
+            const cols = Math.floor(buildingZone.clientWidth / 80);
+            const max = blocks.length - 1;
+
+            if (dir === 'left' && selectedIndex % cols !== 0) selectedIndex--;
+            else if (dir === 'right' && (selectedIndex + 1) % cols !== 0 && selectedIndex < max) selectedIndex++;
+            else if (dir === 'up' && selectedIndex - cols >= 0) selectedIndex -= cols;
+            else if (dir === 'down' && selectedIndex + cols <= max) selectedIndex += cols;
+
+            highlightBlock();
+
+        }
+
+        function paintBlock() {
+            if (!blocks[selectedIndex]) return;
+
+            const row = Math.floor(selectedIndex / blocksPerRow);
+            const col = selectedIndex % blocksPerRow;
+            const key = `${row}-${col}`;
+
+            if (!blockColors[key]) {
+                paintedBlockCount++;
+                update(sessionRef, {
+                    painted: paintedBlockCount
+                 });
+            }
+
+            blocks[selectedIndex].style.backgroundColor = paintColor;
+            blockColors[key] = paintColor;
+        }
+
+        document.querySelectorAll("#Block-Controls button").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const dir = btn.textContent.toLowerCase();
+                if (['up', 'down', 'left', 'right'].includes(dir)) moveSelection(dir);
+                if (btn.textContent.trim().toLowerCase() === "paint") {
+                    btn.addEventListener("click", paintBlock);
+                }
+                playActionSound(blockControlSound);
+            });
+        });
+
+        document.querySelectorAll("#fixedColors button").forEach(btn => {
+            btn.addEventListener("click", () => {
+                paintColor = btn.dataset.color;
+                document.getElementById("customColor").value = paintColor;
+                playActionSound(selectionSound);
+            });
+        });
+
+        document.getElementById("expandRows").addEventListener("click", () => {
+            playActionSound(blockControlSound);
+            extraRows++;
+            displayedBlocks();
+        });
+
+        document.getElementById("expandCols").addEventListener("click", () => {
+            playActionSound(blockControlSound);
+            extraCols++;
+            displayedBlocks();
+        });
+
+        window.addEventListener("keydown", (e) => {
+            const key = e.key.toLowerCase();
+            const keys = ["arrowright", "arrowleft", "arrowdown", "arrowup", "enter", "w", "a", "s", "d"];
+            if (keys.includes(key)) e.preventDefault();
+
+            if (key === "arrowright" || key === "d") selectedIndex += 1;
+            if (key === "arrowleft" || key === "a") selectedIndex -= 1;
+            if (key === "arrowdown" || key === "s") selectedIndex += blocksPerRow;
+            if (key === "arrowup" || key === "w") selectedIndex -= blocksPerRow;
+
+            if (key === "enter") {
+                paintBlock();
+            }
+
+            if (e.shiftKey && key === "r") {
+                extraRows += 1;
+                displayedBlocks();
+            }
+
+            if (e.shiftKey && key === "c") {
+                extraCols += 1;
+                displayedBlocks();
+            }
+
+            highlightBlock();
+        });
+
+        const sessionsRef = ref(db, 'sessions');
+
+        onValue(sessionRef, (snapshot) => {
+            if (!snapshot.exists()) {
+                blockInteraction();
+            }
+        });
+
+        onValue(sessionsRef, (snapshot) => {
+            const sessions = snapshot.val();
+            sessionList.innerHTML = '';
+
+            for (let key in sessions) {
+                const s = sessions[key];
+
+                const row = document.createElement('li');
+                row.style.marginBottom = '4px';
+
+                const text = document.createElement('span');
+                text.textContent = `${s.id} – ${s.painted} blocks`;
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'DESTROY';
+                deleteBtn.style.marginLeft = '8px';
+                deleteBtn.style.background = 'crimson';
+                deleteBtn.style.color = 'white';
+                deleteBtn.style.border = 'none';
+                deleteBtn.style.padding = '2px 6px';
+                deleteBtn.style.cursor = "url('ui/gun-collection/Pistols-inkscape-smaller-1_2.png') 4 4, pointer";
+
+                deleteBtn.addEventListener('click', () => {
+                    remove(ref(db, `sessions/${key}`));
+                    playActionSound(defaultActionSound);
+                });
+
+                row.appendChild(text);
+                row.appendChild(deleteBtn);
+                sessionList.appendChild(row);
+            }
+        });
+
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        fullscreenBtn.addEventListener('click', () => {
+            playActionSound(headerSound);
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+                fullscreenBtn.textContent = 'Exit Fullscreen';
+            } else {
+                document.exitFullscreen();
+                fullscreenBtn.textContent = 'Fullscreen';
+            }
+        });
+
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        let dark = false;
+
+        themeToggleBtn.addEventListener('click', () => {
+            playActionSound(headerSound);
+            document.body.classList.toggle('dark-mode');
+            dark = !dark;
+            themeToggleBtn.textContent = dark ? 'Light Mode' : 'Dark Mode';
+        });
+
+        function blockInteraction() {
+            if (buildingZone) {
+                buildingZone.style.display = 'none';
+                titleCard.style.display = 'none';
+                instructionsCard.style.display = 'none';
+                gameOverCard.style.display = 'block';
+
+            }
+
+            function playRestartSound(sound) {
+                return new Promise((resolve) => {
+                    sound.currentTime = 0;
+                    sound.volume = 0.9;
+                    sound.play();
+                    sound.addEventListener('ended', resolve, { once: true });
+                });
+            }
+
+            restartBtn.addEventListener('click', async () => {
+                await playRestartSound(beginSound);
+                location.reload();
+            });
+        }
+    </script>
+</body>
+</html>
+    </main>
+
+    <footer class="footer p-8 text-center display-heading">
+        <div class="flex justify-center items-center mb-4">
+            <ul class="list-none flex gap-2">
+                <li><a href="https://bsky.app/profile/tisthemorrow.bsky.social" class="social-link p-4">BlueSky</a></li>
+                <li><a href="https://www.reddit.com/user/Jumpy_Web_3024/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" class="social-link p-4">Reddit</a></li>
+            </ul>
+        </div>
+        <p>Website Created By Me (Tis The Morrow)</p> 
+        <p>&copy; 2025 Tis The Morrow</p>
+    </footer>
+
+    <script src="../../assets/main.js"></script>
+</body>
+</html>
