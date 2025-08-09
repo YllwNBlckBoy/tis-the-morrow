@@ -78,7 +78,81 @@
 
 
     <main>
-    
+    <article>
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Product Title -->
+        <h1 class="text-3xl font-bold mb-4 text-heading">PHP File Sharing Platform Code - Zippo Fileshare</h1>
+
+        <!-- Image Carousel -->
+        <section class="relative overflow-hidden rounded-lg shadow-lg mb-6">
+            <div id="carousel" class="flex transition-transform duration-500">
+                <img src="../assets/product-images/zippo-fileshare/image1.jpg" alt="Zippo Fileshare - image 1" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/zippo-fileshare/image2.jpg" alt="Zippo Fileshare - image 2" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/zippo-fileshare/image3.jpg" alt="Zippo Fileshare - image 3" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/zippo-fileshare/image4.jpg" alt="Zippo Fileshare - image 4" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/zippo-fileshare/image5.jpg" alt="Zippo Fileshare - image 5" class="product-img w-full flex-shrink-0">
+            </div>
+            <!-- Navigation buttons -->
+            <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-button px-3 py-1 rounded">‹</button>
+            <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-button px-3 py-1 rounded">›</button>
+        </section>
+
+        <!-- Description -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold mb-2 text-heading">Description</h2>
+            <div>
+                <p>
+                    I have created Zippo Fileshare in, like, 2023. I put the script on Codester to sell. A neat platform for coders to sell scripts and such. However, now, I want to put it here instead.
+
+                    Overview from original product page: "Zippo Fileshare offers a fresh approach to sharing files, with groups that make it easy for everyone in your team to download. Also, users can share files as an individual in a more traditional way. Store, Share, and Download files using Zippo Fileshare today!"
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-2 text-heading">Features</h3>
+                <ul>
+                    <li>User Profiles</li>
+                    <li>User Groups</li>
+                    <li>Individual and Business Accounts</li>
+                    <li>Sign Up and Login Pages</li>
+                    <li>Forgot Password Functionality</li>
+                    <li>Admin Panel</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold mb-2 text-heading">Requirements</h3>
+                <ul>
+                    <li>PHP</li>
+                    <li>XAMPP</li>
+                </ul>
+            </div>
+
+            <p>There's a readme that comes with the script for instructions</p>
+        </section>
+
+        <!-- PayPal Checkout Placeholder -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold mb-2 text-heading">Buy Now</h2>
+            <div id="paypal-button-container" class="bg-card p-4 rounded shadow-md">
+                <style>.pp-YLFAZCMQQZCL4{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                <form action="https://www.paypal.com/ncp/payment/YLFAZCMQQZCL4" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+                    <input class="pp-YLFAZCMQQZCL4" type="submit" value="Buy Now" />
+                    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+                    <section style="font-size: 0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+                </form>
+            </div>
+        </section>
+ 
+        <!-- Share Button -->
+        <section>
+            <button id="copyLink" class="bg-button px-4 py-2 rounded shadow bg-button-hover">
+            Copy Link
+            </button>
+            <span id="copyMsg" class="ml-2 text-sm hidden">Link copied!</span>
+        </section>
+    </div>
+</article>
     </main>
 
     <footer class="footer p-8 text-center display-heading">

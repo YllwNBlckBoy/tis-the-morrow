@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tis The Morrow | Reflective and Observant Indie Creator </title>
+    <meta name="description" content="Tis The Morrow here and swell and constantly creating...and here are all my creations and such.">
+    <meta name="keywords" content="bootstrap-entrepreneur, entrepreneur, artists, coder, webdev, gamedev, indie, indie creator, indie developer, indie artist, indie coder, indie webdev, indie gamedev, Tis The Morrow, writer, genius, mastermind, too-smart, overly-ambitious, overly-pessimistic, pessimistic, Observant, avid-learner, cool-people">
+    <meta name="author" content="Tis The Morrow (Eero)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Social -->
+    <meta property="og:title" content="Tis The Morrow | Reflective and Observant Indie Creator">
+    <meta property="og:description" content="Tis The Morrow here and swell and constantly creating...and here are all my creations and such.">
+    <meta property="og:image" content="./assets/profile-image.png">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:title" content="Tis The Morrow | Reflective and Observant Indie Creator">
+    <meta name="twitter:description" content="A showcase of my creations and thoughts.">
+    <meta name="twitter:image" content="./assets/profile-image.png">
+
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="tomorrow-me">
+    <header class="header">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="./index.html" class="text-xl font-bold display-heading">Tis The Morrow</a>
+
+            <!-- Hamburger button -->
+            <button id="menu-toggle" class="md:hidden block" style="color: white;">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" style="color: white;">
+                    <path d="M4 6h16M4 12h16M4 18h16" class="stroke-current" style="stroke: white;"/>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav id="main-nav" class="hidden md:flex space-x-6 items-center display-heading">
+                <a href="#about" class="hover:underline">About</a>
+                <button id="day-switch" class="text-center hover:cursor-pointer">Dark/Light</button>
+                <div class="relative group">
+                    <button id="main-nav-creations" class="hover:underline flex items-center">Creations
+                        <svg class="ml-1 w-4 h-4 fill-current" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                        </svg>
+                    </button>
+                    <div id="creations-categories" class="creations-categories absolute hidden mt-2 py-2 rounded shadow-lg z-10">
+                        <a href="#creations.art" class="nav-link block px-4 py-2">Art</a>
+                        <a href="#creations.code" class=" nav-link block px-4 py-2">Coding</a>
+                        <a href="#creations.games" class=" nav-link block px-4 py-2">Games</a>
+                        <a href="#creations.miscellaneous" class="nav-link block px-4 py-2">Miscellaneous</a>
+                        <a href="#creations/all" class="nav-link block px-4 py-2">All</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 display-heading">
+            <a href="#about" class="mobile-menu-content block py-2 border-b">About</a>
+            <div>
+            <button id="mobile-creations-toggle" class="mobile-menu-content w-full text-left py-2 border-b flex justify-between items-center">
+                Creations
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path d="M5.25 7.5L10 12.5L14.75 7.5H5.25Z"/>
+                </svg>
+            </button>
+            <div id="mobile-creations-menu" class="mobile-creations-menu pl-4 hidden">
+                <a href="#creations.art" class="block py-1 text-sm">Art</a>
+                <a href="#creations.code" class="block py-1 text-sm">Coding</a>
+                <a href="#creations.games" class="block py-1 text-sm">Games</a>
+                <a href="#creations.miscellaneous" class="block py-1 text-sm">Miscellaneous</a>
+                <a href="#creations.all" class="block py-1 text-sm">All</a>
+            </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+    <article>
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Product Title -->
+        <h1 class="text-3xl font-bold mb-4 text-heading">Human Defined Zine - HTML Version</h1>
+
+        <!-- Image Carousel -->
+        <section class="relative overflow-hidden rounded-lg shadow-lg mb-6">
+            <div id="carousel" class="flex transition-transform duration-500">
+                <img src="../assets/product-images/human-defined/image1.png" alt="Human Defined Zine - image 1" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/human-defined/image2.png" alt="Human Defined Zine - image 2" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/human-defined/image3.png" alt="Human Defined Zine - image 3" class="product-img w-full flex-shrink-0">
+                <img src="../assets/product-images/human-defined/alone-drop.png" alt="Human Defined Zine - Promo Image" class="product-img w-full flex-shrink-0">
+            </div>
+
+            <!-- Navigation buttons -->
+            <button id="prevBtn" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-button px-3 py-1 rounded">‹</button>
+            <button id="nextBtn" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-button px-3 py-1 rounded">›</button>
+        </section>
+
+        <!-- Description -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold mb-2 text-heading">Description</h2>
+            <div>
+                <p>
+                    A downloadable HTML and CSS Zine.
+                </p>
+                <p>
+                    A HTML/CSS zine: mostly a dialogue conversation between one's self reflecting on what it means to be human.
+                </p>
+                <p>A HTML/CSS version of Human Defined. I originally created this zine first using HTML with the contents being dialogue and vector art. I converted it to a PDF; however, this is the actual HTML/CSS files packaged in a ZIP for preference. This one has some web page effects (JavaScript typing effect, sticky background on desktop, repeat background on mobile, mobile responsiveness) if extracted and opened in your browser.</p>
+                <p>Quote -- </p>
+                <blockquote>
+                    "...I don't know for certain, but it seems empty in here. Perhaps nobody can hear us, but..."—Human Mind Hesitates, Mind Fights, Mind Struggles, Mind Tries Anyway— "I've been told—and if we started discarding what I've been taught, like we've done with my horridness—"
+                        
+                    You're not horrid. Stop saying that.
+                </blockquote>
+                <p><i>Also includes the pdf version also for preference.</i></p>
+                <p>
+                    Enough of all this bullsh*t. The truth is not that complicated. Yes, it's not pretty and it doesn't glimmer. The truth is not that kind of trophy. Regardless, let's define human the way that has been covered with lies. They are lies, they are tricks. Oh, and for the sake of the future just in case: a loosened grip does not mean release. Release will never happen. 
+                </p>
+                <p>So, here's what it truly means to be human.</p>
+                <br>
+                <small>Salesy, Salesy Nonsense in My Original Listing...</small>
+                <h3>Why Download the Zine? What Directly Can it Offer?</h3>
+                <ul>
+                    <li>This art can offer connection thicker than hobbies, dream talk, and common interest (those things commonly define who we can "connect" to and who we ignore, avoid, or exclude).</li>
+                    <li>A strengthened sense of self. The destruction of extensive categorization and a never-changing measurement of life (aka, why you deserve to exist regardless of any standards).</li>
+                    <li>A subjectively beautiful story written out as a conversation with a clear direction, purpose, build-up, and nice ending.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PayPal Checkout Placeholder -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold mb-2 text-heading">Buy Now</h2>
+            <div id="paypal-button-container" class="bg-card p-4 rounded shadow-md">
+                <style>.pp-H2QET982QD8GL{text-align:center;border:none;border-radius:0.25rem;min-width:11.625rem;padding:0 2rem;height:2.625rem;font-weight:bold;background-color:#FFD140;color:#000000;font-family:"Helvetica Neue",Arial,sans-serif;font-size:1rem;line-height:1.25rem;cursor:pointer;}</style>
+                <form action="https://www.paypal.com/ncp/payment/H2QET982QD8GL" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+                    <input class="pp-H2QET982QD8GL" type="submit" value="Buy Now" />
+                    <img src=https://www.paypalobjects.com/images/Debit_Credit_APM.svg alt="cards" />
+                    <section style="font-size: 0.75rem;"> Powered by <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+                </form>
+            </div>
+        </section>
+
+        <!-- Share Button -->
+        <section>
+            <button id="copyLink" class="bg-button px-4 py-2 rounded shadow bg-button-hover">
+            Copy Link
+            </button>
+            <span id="copyMsg" class="ml-2 text-sm hidden">Link copied!</span>
+        </section>
+    </div>
+</article>
+    </main>
+
+    <footer class="footer p-8 text-center display-heading">
+        <div class="flex justify-center items-center mb-4">
+            <ul class="list-none flex gap-2">
+                <li><a href="" class="social-link p-4">BlueSky</a></li>
+                <li><a href="" class="social-link p-4">Reddit</a></li>
+            </ul>
+        </div>
+        <p>Website Created By Me (Tis The Morrow)</p>
+        <p>&copy; 2025 Tis The Morrow</p>
+    </footer>
+    <script src="./assets/main.js"></script>
+</body>
+</html>
