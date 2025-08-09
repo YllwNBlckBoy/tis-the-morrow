@@ -64,6 +64,11 @@ function buildSite() {
         layoutToUse = thankyouLayout;
       } else if (normalizedPath.startsWith("creations/")) {
         layoutToUse = listingLayout;
+      } else if (normalizedPath.startsWith("creations/games/")) {
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const outputFilePath = path.join(distDir, normalizedPath);
+        fs.mkdirSync(path.dirname(outputFilePath), { recursive: true });
+        fs.writeFileSync(outputFilePath, fileContent);
       }
 
       const finalHtml = layoutToUse.replace("{{ content }}", content);

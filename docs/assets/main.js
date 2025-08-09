@@ -96,4 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
       gameIframe.focus();
     }
   });
+
+  document.addEventListener('fullscreenchange', () => { 
+    if (!document.fullscreenElement) {
+      gameIframe.classList.add('hidden');
+    }
+  });
+  
 });
