@@ -55,6 +55,11 @@ h1, h2, h3, .display-heading {
     color: white;
 }
 
+.copyright-div {
+    text-align: center;
+    align-self: center;
+}
+
 .social-link:hover {
     color: red;
     text-decoration: none;
