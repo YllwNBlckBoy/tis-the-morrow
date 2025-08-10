@@ -161,6 +161,12 @@ h1, h2, h3, .display-heading {
     box-shadow: 0 4px 6px black/20%;
 }
 
+/* Intention Note */
+.intention-note {
+    background-color: hwb(50 0% 95%);
+    color: red;
+    padding: 1rem;
+}
 
 /* Thank You Page */
 .disabled {
