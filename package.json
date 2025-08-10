@@ -4,6 +4,7 @@
     "postbuild": "npx vercel blob rm products/* --yes && npx vercel blob put products/*"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "@vercel/blob": "^1.1.1",
     "chokidar": "^4.0.3"
   },
