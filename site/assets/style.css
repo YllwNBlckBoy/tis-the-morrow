@@ -173,6 +173,14 @@ h1, h2, h3, .display-heading {
     padding: 1rem;
 }
 
+/* Promotion Note */
+.promo-note {
+    background-color: hwb(100 5% 10%);
+    color: hwb(50 0% 95%);
+    padding: 5rem;
+    margin: 5rem;
+}
+
 /* Thank You Page */
 .disabled {
     pointer-events: none;
