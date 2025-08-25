@@ -179,6 +179,7 @@ h1, h2, h3, .display-heading {
     color: hwb(50 0% 95%);
     padding: 5rem;
     margin: 5rem;
+    line-height: 1.5rem;
 }
 
 /* Thank You Page */
